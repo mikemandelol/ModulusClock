@@ -28,20 +28,18 @@ public class clock
 		System.out.print("Enter the number of minutes later: ");
 		minLate = input.nextInt();
 
-		// Convert zero o'clock to twelve o'clock
-		if (hourLate == 0)
-				{
-				  hourLate = 12;
-		}
-
 		calcHour = hourStart + hourLate;
 		calcMin = minStart + minLate;
 		// get hours by doing calcMin / 60
 		calcHour += calcMin / 60;
 		// get remaining minutes by doing % 60
 		calcMin = calcMin % 60;
-
+		calcHour = calcHour % 12;
 		System.out.printf("Future time = %s:%s Oclock ",calcHour, calcMin );
-
+		// Convert zero o'clock to twelve o'clock
+		if (hourLate == 0)
+		{
+			hourLate = 12;
+		}
 	}
 }
